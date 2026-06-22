@@ -1,6 +1,6 @@
 # AIOVTUE Hugo 博客
 
-参考butterfly、sakura等，基于Hugo 的静态博客。
+参考butterfly、sakura等，基于**Hugo** 的静态博客。
 欢迎前往示例网站参观：[AIOVTUE-XUE](https://daily.yybb.us)
 
 ## 博客预览
