@@ -1,0 +1,29 @@
+{{ $data := hugo.Data.links }}
+<div class="links-preview">
+  {{ range $data.linkGroups }}
+  <section class="links-preview-group">
+    <header class="links-preview-group__header">
+      <h2 class="links-preview-group__title"><span>📌</span> {{ .name }}</h2>
+      {{ with .desc }}<p class="links-preview-group__desc">分类描述 🌸：{{ . }}</p>{{ end }}
+    </header>
+    <ul class="links-preview-grid">
+      {{ range .links }}
+      <li class="links-preview-item" style="--link-color: {{ .color | default `#0078e7` }}">
+        <a class="links-preview-card" href="{{ .url }}" target="_blank" rel="friend noopener">
+          <div class="links-preview-shot">
+            <img class="sakura-lazy-img" src="{{ .siteshot | default (printf `https://s0.wp.com/mshots/v1/%s?w=800&h=450` (.url | urlquery)) }}" alt="{{ .name }}" loading="lazy" decoding="async">
+          </div>
+          <div class="links-preview-meta">
+            <img class="sakura-lazy-img links-preview-avatar" src="{{ .avatar }}" alt="{{ .name }}" loading="lazy" decoding="async">
+            <div class="links-preview-text">
+              <div class="links-preview-name">{{ .blog | default .name }}</div>
+              <div class="links-preview-desc">{{ .desc }}</div>
+            </div>
+          </div>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+</div>

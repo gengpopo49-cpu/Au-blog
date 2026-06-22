@@ -1,0 +1,15 @@
+{{- $loader := .Site.Params.loader | default dict -}}
+{{- if default true $loader.enable -}}
+{{- $avatar := .Site.Params.author.avatar | default (.Site.Params.favicon | default `/favicon.png`) -}}
+{{- $loaderText := .Site.Title -}}
+<div id="va-fouc-loader" aria-hidden="true">
+  <div id="va-fouc-loader__spinner">
+    <div id="va-fouc-loader__ring"></div>
+    {{- with $avatar }}
+    <img id="va-fouc-loader__avatar" src="{{ if hasPrefix . `http` }}{{ . }}{{ else }}{{ . | relURL }}{{ end }}" alt="" decoding="async" onerror="this.remove()">
+    {{- end }}
+  </div>
+  <div id="va-fouc-loader__dots"><span></span><span></span><span></span></div>
+  <div id="va-fouc-loader__text">{{ $loaderText }}</div>
+</div>
+{{- end -}}

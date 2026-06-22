@@ -1,0 +1,14 @@
+{{ define "main" }}
+<article class="sakura-page sakura-links-page">
+  {{- partial "page-header.html" . -}}
+  <div class="sakura-links-main">
+    <div class="content sakura-page-content">
+      {{- partial "links-preview.html" . -}}
+      <div class="friend-notice-bottom">
+        {{- partial "friend-link-notice.html" . -}}
+      </div>
+      {{- partial "comment-section.html" . -}}
+    </div>
+  </div>
+</article>
+{{ end }}

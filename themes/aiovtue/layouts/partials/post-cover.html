@@ -1,0 +1,6 @@
+{{- $page := . -}}
+{{- $cover := strings.TrimSpace ($page.Params.cover | default "") -}}
+{{- if not $cover -}}
+  {{- $cover = $page.Site.Params.defaultCover -}}
+{{- end -}}
+{{- return $cover -}}

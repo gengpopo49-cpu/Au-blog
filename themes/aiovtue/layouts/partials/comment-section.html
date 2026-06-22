@@ -1,0 +1,14 @@
+{{- $provider := default "waline" site.Params.comment.provider -}}
+<section class="sakura-comment" data-comment-provider="{{ $provider }}">
+  {{- if eq $provider "waline" -}}
+  <div
+    id="waline"
+    class="sakura-waline"
+    data-placeholder="{{ site.Params.waline.placeholder | default `分享你的想法...` }}"
+  ></div>
+  {{- else -}}
+  <div class="sakura-twikoo">
+    <div id="tcomment"></div>
+  </div>
+  {{- end -}}
+</section>

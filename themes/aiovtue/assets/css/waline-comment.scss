@@ -1,0 +1,17 @@
+/* Waline 评论：与 Sakura 主题色、深浅色模式对齐 */
+.sakura-waline {
+  --waline-theme-color: var(--sakura-color-primary);
+  --waline-active-color: var(--sakura-color-action);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+html.dark .sakura-waline {
+  --waline-bgcolor: var(--sakura-post-card-bg);
+  --waline-bgcolor-light: var(--sakura-color-background);
+  --waline-border-color: var(--sakura-color-divider);
+  --waline-disable-color: var(--sakura-color-text-muted);
+  --waline-info-color: var(--sakura-color-text-muted);
+  --waline-color: var(--sakura-color-text);
+}

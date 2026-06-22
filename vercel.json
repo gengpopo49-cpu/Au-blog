@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "hugo build --cleanDestinationDir",
+  "outputDirectory": "public",
+  "framework": null,
+  "build": {
+    "env": {
+      "HUGO_VERSION": "0.163.3",
+      "HUGO_ENV": "production"
+    }
+  }
+}

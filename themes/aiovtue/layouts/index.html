@@ -1,0 +1,19 @@
+{{ define "main" }}
+<section class="sakura-home">
+  {{- partial "hero.html" . -}}
+  <div class="sakura-home-layout" id="home-posts">
+    {{- partial "notice-board.html" . -}}
+    <div class="sakura-post-list" id="home-post-list">
+      <div class="post-list-container">
+        {{ $posts := where .Site.RegularPages "Section" "posts" }}
+        {{ $posts = sort $posts "Date" "desc" }}
+        {{ $paginator := .Paginate $posts 10 }}
+        {{ range $index, $page := $paginator.Pages }}
+          {{- partial "post-card.html" (dict "Page" $page "Site" $.Site "Index" $index) -}}
+        {{ end }}
+      </div>
+      {{- partial "pagination.html" . -}}
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Lang | default `zh` }}" class="{{ if .IsHome }}is-home has-home-layout{{ else if eq .Kind `404` }}has-404-layout{{ end }}">
+<head>
+  {{- partial "head.html" . -}}
+</head>
+<body class="{{ if default true .Site.Params.loader.enable }}sakura-loading{{ end }}">
+  {{- partial "loader.html" . -}}
+  {{- partial "navbar.html" . -}}
+  <div id="content" class="site-content">
+    {{- block "main" . }}{{- end }}
+  </div>
+  {{- partial "footer.html" . -}}
+  {{- partial "search-modal.html" . -}}
+  {{- partial "scripts.html" . -}}
+</body>
+</html>

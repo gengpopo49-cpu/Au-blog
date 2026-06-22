@@ -1,0 +1,39 @@
+{{ define "main" }}
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ $posts = sort $posts "Date" "desc" }}
+<article class="sakura-page sakura-taxonomy-page sakura-categories-page">
+  {{- partial "page-header.html" . -}}
+  <div class="sakura-page-content">
+    <p class="sakura-taxonomy-count">共 {{ len .Data.Terms }} 个分类</p>
+    <div id="categories-chart" class="sakura-stat-chart sakura-categories-chart"></div>
+    <script type="application/json" id="categories-chart-data">{{ $data := slice }}{{ range .Data.Terms.ByCount }}{{ $data = $data | append (dict "name" .Page.Title "value" .Count "categoryKey" .Term) }}{{ end }}{{ $data | jsonify | safeHTML }}</script>
+    <div class="sakura-tag-buttons sakura-categories-list">
+      {{ range .Data.Terms.ByCount }}
+      <button type="button" class="sakura-tag-button" data-category="{{ .Term }}">{{ .Page.Title }} [{{ .Count }}]</button>
+      {{ end }}
+    </div>
+    <div id="categories-post-section" class="sakura-categories-posts" hidden>
+      <div class="sakura-section-divider">
+        <span class="iconify sakura-section-divider__icon" data-icon="fa6-solid:water"></span>
+        <span class="sakura-section-divider__text">文章列表</span>
+      </div>
+      <div class="sakura-post-list">
+        <div class="post-list-container" id="categories-post-list">
+          {{ range $index, $page := $posts }}
+          {{ $cats := slice }}
+          {{ range ($page.GetTerms "categories") }}
+            {{ $cats = $cats | append .Data.Term }}
+          {{ end }}
+          {{ if not $cats }}
+            {{ $cats = $page.Params.categories | default slice }}
+          {{ end }}
+          <div class="categories-post-item" data-categories="{{ $cats | jsonify | safeHTMLAttr }}" hidden>
+            {{- partial "post-card.html" (dict "Page" $page "Site" $.Site "Index" $index) -}}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+{{ end }}

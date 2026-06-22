@@ -1,0 +1,49 @@
+<meta charset="utf-8">
+{{- $favicon := .Site.Params.favicon | default `/favicon.png` -}}
+<link rel="icon" href="{{ $favicon | relURL }}" type="image/png">
+{{- partial "loader-head.html" . -}}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else if eq .Kind "404" }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+{{- $desc := .Description | default .Site.Params.description -}}
+{{- $ogTitle := cond .IsHome .Site.Title (cond (eq .Kind "404") .Site.Title .Title) -}}
+{{- $ogType := cond (eq .Section "posts") "article" "website" -}}
+{{- $ogImage := partial "post-cover.html" . | default $favicon -}}
+{{- if not (hasPrefix $ogImage "http") }}{{ $ogImage = $ogImage | absURL }}{{ end -}}
+<meta name="description" content="{{ $desc }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="{{ "sitemap.xml" | absURL }}">
+<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ "index.xml" | absURL }}">
+{{- $commentProvider := default "waline" site.Params.comment.provider -}}
+{{- if eq $commentProvider "waline" -}}
+  {{- with site.Params.waline.serverURL -}}
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
+<meta name="sakura-waline-server" content="{{ . }}">
+  {{- end -}}
+{{- else if eq $commentProvider "twikoo" -}}
+{{ with index site.Params.twikoo "envid" }}
+<meta name="sakura-twikoo-env" content="{{ . }}">
+{{ end }}
+{{- end -}}
+<meta property="og:locale" content="zh-CN">
+<meta property="og:locale:alternate" content="en">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ $ogTitle }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:image" content="{{ $ogImage }}">
+<meta property="og:type" content="{{ $ogType }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $ogTitle }}">
+<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:image" content="{{ $ogImage }}">
+{{- $primary := .Site.Params.primaryColor | default "#DF9193" -}}
+<style>:root{--va-c-primary:{{ $primary }};}</style>
+{{ if .IsHome }}<style>:root{--sakura-hero-placeholder:#fafafa;--sakura-hero-placeholder-from:#f5f5f5;--sakura-hero-placeholder-to:#fff}html.dark{--sakura-hero-placeholder:#e8e8e8;--sakura-hero-placeholder-from:#ececec;--sakura-hero-placeholder-to:#e0e0e0}html.is-home,html.is-home body{background:var(--sakura-hero-placeholder)}</style>{{ end }}
+<link rel="stylesheet" href="{{ "fonts/lxgw-wenkai-screen/style.css" | relURL }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+{{ $css := resources.Get "css/main.scss" | css.Sass | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
+{{ block "head-extra" . }}{{ end }}
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js" defer></script>
