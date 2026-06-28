@@ -8,7 +8,7 @@
 baseURL = 'https://daily.yybb.us/'
 locale = 'zh-cn'
 defaultContentLanguage = 'zh'
-title = 'AIOVTUE-雪'          # 站点名称（浏览器标题、页脚版权等）
+title = 'Au-黑小白'          # 站点名称（浏览器标题、页脚版权等）
 theme = 'aiovtue'           # 主题目录：themes/aiovtue/
 hasCJKLanguage = true      # 启用中文分词（搜索、摘要等）
 enableRobotsTXT = true     # 生成 robots.txt（模板在 themes/aiovtue/layouts/robots.txt）
@@ -74,7 +74,7 @@ enableRobotsTXT = true     # 生成 robots.txt（模板在 themes/aiovtue/layout
   # --- 首页 Hero 大图 / 视频轮播 ---
   # 媒体文件放在 static/hero/，此处写 URL 路径（以 / 开头）
   [params.hero]
-    title = 'AIOVTUE'
+    title = 'Au'
     motto = '雨是神的烟花'
     randomUrls = true      # 随机切换背景
     enableHitokoto = true  # 一言 API 随机格言
@@ -109,7 +109,7 @@ enableRobotsTXT = true     # 生成 robots.txt（模板在 themes/aiovtue/layout
       lines = ['daily.yybb.us', 'day.yybb.us']
     [[params.notice.sections]]
       label = '--- 一些说明 ---'
-      lines = ['不止是可以写域名哦，也可以写文字啦，修改位置在根文件夹的hugo.toml文件内']
+      lines = ['欢迎来到我的博客']
 
   # --- 侧栏 / Hero 社交图标（icon 为 Iconify 图标名）---
   [[params.social]]
