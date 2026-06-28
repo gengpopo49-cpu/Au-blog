@@ -74,7 +74,7 @@ enableRobotsTXT = true     # 生成 robots.txt（模板在 themes/aiovtue/layout
   # --- 首页 Hero 大图 / 视频轮播 ---
   # 媒体文件放在 static/hero/，此处写 URL 路径（以 / 开头）
   [params.hero]
-    title = 'Au'
+    title = 'Au-blog'
     motto = '雨是神的烟花'
     randomUrls = true      # 随机切换背景
     enableHitokoto = true  # 一言 API 随机格言
@@ -96,9 +96,8 @@ enableRobotsTXT = true     # 生成 robots.txt（模板在 themes/aiovtue/layout
 
   # --- 页脚 ---
   [params.footer]
-    since = 2024           # 版权起始年
-    runtimeSince = '2024-01-01'   # 站点运行倒计时起点（YYYY-MM-DD）
-    icp = '<a href="https://icp.gov.moe/?keyword=20260258" target="_blank" rel="noopener">萌ICP备20260258号</a>' # 萌icp，建议可以搞一个，虽然没啥用，不搞记得把我删了哦
+    since = 2026           # 版权起始年
+    runtimeSince = '2026-06-27'   # 站点运行倒计时起点（YYYY-MM-DD）
 
   # --- 首页公告栏（右侧域名列表）---
   [params.notice]
