@@ -9,7 +9,7 @@ baseURL = 'https://daily.yybb.us/'
 locale = 'zh-cn'
 defaultContentLanguage = 'zh'
 title = 'Au-黑小白'          # 站点名称（浏览器标题、页脚版权等）
-theme = 'Au'           # 主题目录：themes/aiovtue/
+theme = 'aiovtue'           # 主题目录：themes/aiovtue/
 hasCJKLanguage = true      # 启用中文分词（搜索、摘要等）
 enableRobotsTXT = true     # 生成 robots.txt（模板在 themes/aiovtue/layouts/robots.txt）
 
@@ -66,7 +66,7 @@ enableRobotsTXT = true     # 生成 robots.txt（模板在 themes/aiovtue/layout
 
   # --- 侧边栏 / 关于页作者信息 ---
   [params.author]
-    name = 'AIOVTUE'
+    name = 'Au'
     avatar = '/hero/avatar.png'
     statusEmoji = '🌸'     # 头像角标
     statusMessage = '发呆ing...'
@@ -196,7 +196,7 @@ enableRobotsTXT = true     # 生成 robots.txt（模板在 themes/aiovtue/layout
 
   # --- 顶栏标题 ---
   [params.navbar]
-    titleParts = ['AIOVTUE-', '雪']   # 顶栏主标题分段（可产生动画效果）
+    titleParts = ['Au-', '黑小白']   # 顶栏主标题分段（可产生动画效果）
     subTitle = '雨是神的烟花'
     offset = 0
 
