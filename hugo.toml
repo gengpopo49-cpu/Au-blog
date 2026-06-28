@@ -111,6 +111,11 @@ enableRobotsTXT = true     # 生成 robots.txt（模板在 themes/aiovtue/layout
       lines = ['欢迎来到我的博客']
 
   # --- 侧栏 / Hero 社交图标（icon 为 Iconify 图标名）---
+  [[params.social]]
+      name = 'RSS'
+      link = '/index.xml'  # Hugo 默认 RSS 路径
+      icon = 'ri:rss-line'
+      color = 'orange'
     [[params.social]]
       name = 'GitHub'
       link = 'https://github.com/AIOVTUE'
