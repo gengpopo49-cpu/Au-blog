@@ -3,6 +3,7 @@ title: “第一篇文章”
 date: 2026-06-27
 lastmod: 2026-06-27
 description: 不知道写点啥，先放着吧
+cover: "/hero/tt4.jpg"
 categories:
  - 杂谈
 tags:
