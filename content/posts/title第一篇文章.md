@@ -1,7 +1,7 @@
 ---
 title: “第一篇文章”
-date: 2026-6-27
-lastmod: 2026-6-27
+date: 2026-06-27
+lastmod: 2026-06-27
 description:
  - 杂谈
 categories:
