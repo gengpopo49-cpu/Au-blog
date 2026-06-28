@@ -9,7 +9,7 @@ baseURL = 'https://daily.yybb.us/'
 locale = 'zh-cn'
 defaultContentLanguage = 'zh'
 title = 'Au-黑小白'          # 站点名称（浏览器标题、页脚版权等）
-theme = 'aiovtue'           # 主题目录：themes/aiovtue/
+theme = 'Au'           # 主题目录：themes/aiovtue/
 hasCJKLanguage = true      # 启用中文分词（搜索、摘要等）
 enableRobotsTXT = true     # 生成 robots.txt（模板在 themes/aiovtue/layouts/robots.txt）
 
@@ -52,7 +52,7 @@ enableRobotsTXT = true     # 生成 robots.txt（模板在 themes/aiovtue/layout
 # 站点参数（主题通过 .Site.Params 读取）
 # =============================================================================
 [params]
-  subtitle = '雪'                              # 副标题（首页标题后缀）
+  subtitle = '黑小白'                              # 副标题（首页标题后缀）
   description = '雨是神的烟花'                  # 站点默认描述（SEO、分享卡片）
   primaryColor = '#DF9193'                     # 主题主色
   favicon = '/favicon.png'                       # 站点图标
@@ -111,11 +111,6 @@ enableRobotsTXT = true     # 生成 robots.txt（模板在 themes/aiovtue/layout
       lines = ['欢迎来到我的博客']
 
   # --- 侧栏 / Hero 社交图标（icon 为 Iconify 图标名）---
-  [[params.social]]
-      name = 'RSS'
-      link = '/index.xml'  # Hugo 默认 RSS 路径
-      icon = 'ri:rss-line'
-      color = 'orange'
     [[params.social]]
       name = 'GitHub'
       link = 'https://github.com/AIOVTUE'
